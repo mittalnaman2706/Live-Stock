@@ -1,0 +1,65 @@
+<!-- https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=JCONAHM5CV7PI1CS -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",{              
+		title:{
+			text: "Multiple Y Axis"
+		},
+		axisX:{
+			valueFormatString: "####",
+			interval: 1
+		},
+	data: [
+	{
+		type: "spline",
+		axisYIndex: 1, //Defaults to Zero
+		name: "Axis Y-2",
+		xValueFormatString: "####",
+		dataPoints: [
+			{ x: 2006, y: 15 },
+			{ x: 2007, y: 3 },
+			{ x: 2008, y: 20 },
+			{ x: 2009, y: 10 },
+			{ x: 2010, y: 30 },
+			{ x: 2011, y: 10 },
+			{ x: 2012, y: 600 },
+			{ x: 2013, y: 20 },
+			{ x: 2014, y: 2 }
+		]
+	},
+	{
+		type: "spline",
+		showInLegend: true,                  	
+		axisYType: "secondary",
+		axisYIndex: 1, //When axisYType is secondary, axisYIndex indexes to secondary Y axis & not to primary Y axis
+		name: "Axis Y2-2",
+		xValueFormatString: "####",
+		dataPoints: [
+			{ x: 2006, y: 86 },
+			{ x: 2007, y: 15 },
+			{ x: 2008, y: 27 },
+			{ x: 2009, y: 78 },
+			{ x: 2010, y: 46 },
+			{ x: 2011, y: 70 },
+			{ x: 2012, y: 50 },
+			{ x: 2013, y: 60 },
+			{ x: 2014, y: 50 }
+		]
+	}
+	]
+	});
+
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;">
+</div>
+</body>
+</html>
