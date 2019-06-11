@@ -1,0 +1,17 @@
+{
+  "name": "live-stocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naman Mittal",
+  "license": "ISC",
+  "dependencies": {
+    "alpha-vantage-cli": "^1.0.8",
+    "data-forge": "^1.7.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
