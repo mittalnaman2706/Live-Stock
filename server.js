@@ -9,9 +9,14 @@ var app = express();
 
 var apiKey = "JCONAHM5CV7PI1CS";
 
-var staticPath = path.join(__dirname, 'client');
-console.log(staticPath);
-app.use(express.static(staticPath));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+  res.render('pages/index');
+});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
